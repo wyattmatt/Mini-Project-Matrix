@@ -32,6 +32,29 @@ This Python program allows users to perform basic operations on matrices of up t
 - For determinant and inverse calculations, the input matrix must be square.
 - If the determinant of a matrix is zero, its inverse does not exist.
 
+## Error Handling
+
+The program includes robust error handling to ensure a smooth user experience. Here are the scenarios it handles:
+
+1. **Invalid Input Format**:
+   - If the user enters a non-integer value or the wrong input format, the program will prompt the user to try again.
+
+2. **Matrix Size Constraints**:
+   - If the user attempts to input a matrix larger than 4x4, an error message will be displayed: `"Ukuran matriks maksimal adalah 4x4."`
+
+3. **Incompatible Matrix Sizes**:
+   - For addition and subtraction, both matrices must have the same size. If they don't, the program will display an error message.
+   - For multiplication, the number of columns in the first matrix must equal the number of rows in the second matrix. If not, an error message will be shown.
+
+4. **Zero Determinant**:
+   - If the determinant of a square matrix is zero, the program will inform the user that the matrix has no inverse.
+
+5. **Overflow Prevention**:
+   - If the user enters very large or unreasonable numbers, the program will catch and handle potential overflow issues gracefully.
+
+6. **Graceful Exit**:
+   - If the user interrupts the program using `Ctrl+C` or wants to exit, the program will handle it gracefully by displaying a friendly exit message.
+
 ## Example
 
 ### Matrix Addition
@@ -65,11 +88,6 @@ Hasil Penjumlahan Matriks:
 6 8
 10 12
 ```
-
-## Error Handling
-
-- If the input matrix size exceeds 4x4, the program will display an error message: `"Ukuran matriks maksimal adalah 4x4."`
-- If invalid inputs are provided, the program will prompt the user to try again.
 
 ## License
 
